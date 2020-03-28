@@ -1,11 +1,19 @@
 server:
   port: 8888
   
+#spring:
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: /home/rafael/Github/Microservicos/configuration/
+
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: /home/rafael/Github/Microservicos/configuration/
+        git:
+          uri: https://github.com/rafaelcarvalhocaetano/Microservicos
+          search-paths: configuration
