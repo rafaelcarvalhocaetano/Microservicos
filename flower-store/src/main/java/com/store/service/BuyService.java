@@ -33,7 +33,7 @@ public class BuyService {
 		InfoProviderDTO info = client.getInfoState(buy.getAddress().getState());
 		
 		LOG.info("REQ KJU765FGHT5Yu898 ::::: ");
-		InfoRequestDTO req = client.sendProvider(buy);
+		InfoRequestDTO req = client.sendProvider(buy.getItems());
 		
 		Buy buyModel = new Buy();
 		buyModel.setPedidoId(req.getId());
