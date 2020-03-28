@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 @Service
 public class BuyService {
 
@@ -27,15 +29,17 @@ public class BuyService {
 
 		final String state = buy.getAddress().getState();
 		
-		LOG.info("SEARCH INFO REQUEST", state);
-		InfoProviderDTO dto = client.getInfoState(buy.getAddress().getState());
+		LOG.info("SEARCH INFO 00001 ::::: ", state);
+		InfoProviderDTO info = client.getInfoState(buy.getAddress().getState());
+		
+		LOG.info("REQ KJU765FGHT5Yu898 ::::: ");
 		InfoRequestDTO req = client.sendProvider(buy.getItems());
 		
 		Buy buyModel = new Buy();
 		buyModel.setPedidoId(req.getId());
 		buyModel.setTempoDePreparo(req.getTimePreparation());
 		buyModel.setEnderecoDestino(buy.getAddress().toString());
-			
+		LOG.info("INFO :::::::::::::::::::: ", info);
 		return buyModel;
 	}
 	
