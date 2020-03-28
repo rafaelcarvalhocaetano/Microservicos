@@ -1,6 +1,7 @@
 package com.store.controller;
 
 import com.store.dto.BuyDTO;
+import com.store.model.Buy;
 import com.store.service.BuyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,8 @@ public class BuyController {
 
 
   @PostMapping
-  public BuyDTO buyStore(@RequestBody BuyDTO buy) {
-    service.senBuy(buy);
-    return buy;
+  public Buy buyStore(@RequestBody BuyDTO buy) {
+    return service.sendBuy(buy);
   }
   
 }

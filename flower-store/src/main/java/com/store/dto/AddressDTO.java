@@ -48,4 +48,11 @@ public class AddressDTO {
   public void setState(String state) {
     this.state = state;
   }
+
+	@Override
+	public String toString() {
+		return "AddressDTO [street=" + street + ", number_hose=" + number_hose + ", state=" + state + "]";
+	}
+  
+  
 }
